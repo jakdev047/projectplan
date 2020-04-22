@@ -1,8 +1,16 @@
 $secondaryColor: #ec407a;
+$bgColor: #95e8f3;
 
-h2 {
-  color: $secondaryColor;
+
+body {
+  background: $bgColor;
 }
+
+.white {
+  padding: 15px;
+  margin: 30px 0;
+}
+
 
 // error-section
 .error-section {
