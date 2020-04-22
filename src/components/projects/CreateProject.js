@@ -24,7 +24,6 @@ const CreateProject = ({createProject}) => {
       setContent('');
     }
   }
-
   return (
     <div className="container">
       <form className="white" onSubmit={onSubmitHandler}>
@@ -57,4 +56,10 @@ const CreateProject = ({createProject}) => {
   );
 };
 
-export default connect(null,{createProject})(CreateProject);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createProject: project => dispatch(createProject(project))
+  }
+}
+
+export default connect(null,mapDispatchToProps)(CreateProject);

@@ -1,4 +1,4 @@
-import { ADD_PROJECT } from "../actions/types";
+import { ADD_PROJECT, ADD_PROJECT_ERROR } from "../actions/types";
 
 const init = {
   projects:[
@@ -17,7 +17,11 @@ const projectReducer = (state=init,action) => {
       return {
         ...state,
         projects:[...state.projects,action.payload]
-      }
+      };
+
+    case ADD_PROJECT_ERROR: 
+      console.log(ADD_PROJECT_ERROR,action.err);
+      return state;
   
     default:
       return state;

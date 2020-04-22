@@ -9,10 +9,7 @@ import { getFirebase, reactReduxFirebase } from "react-redux-firebase";
 
 import firebaseConfig from '../config/firebaseConfig';
 
-const middleware = [thunk.withExtraArgument({
-  getFirebase,
-  getFirestore
-})];
+const middleware = [thunk.withExtraArgument({getFirebase,getFirestore})];
 
 const store = createStore(
   rootReducer,
@@ -20,8 +17,9 @@ const store = createStore(
   composeWithDevTools(
     applyMiddleware(...middleware),
     reduxFirestore(firebaseConfig),
-    reactReduxFirebase(firebaseConfig)
+    reactReduxFirebase(firebaseConfig),
+    
   )
-)
+);
 
 export default store;
