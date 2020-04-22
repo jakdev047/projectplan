@@ -1,3 +1,5 @@
+import { ADD_PROJECT } from "../actions/types";
+
 const init = {
   projects:[
     {
@@ -11,8 +13,11 @@ const init = {
 
 const projectReducer = (state=init,action) => {
   switch (action.type) {
-    case '':
-      return state;
+    case ADD_PROJECT:
+      return {
+        ...state,
+        projects:[...state.projects,action.payload]
+      }
   
     default:
       return state;

@@ -1,17 +1,30 @@
 import React,{useState} from 'react';
-const CreateProject = () => {
+import { connect } from 'react-redux';
+import { createProject } from '../../store/actions/projectAction';
+import { v4 as uuidv4 } from 'uuid';
+
+const CreateProject = ({createProject}) => {
   // title,content,email,password
   const [title,setTitle] = useState('');
   const [content,setContent] = useState('');
+
   const onSubmitHandler = e => {
     e.preventDefault();
     // data capture
-    const newData = {title,content};
-    console.log(newData);
-    //reset form field
-    setTitle('');
-    setContent('');
+    const newData = {id: uuidv4(),title,content};
+    if(newData.title === '' && newData.content === '') {
+      alert('Please enter Title & Content value')
+    }
+    else {
+      createProject(newData);
+      console.log(newData);
+
+      //reset form field
+      setTitle('');
+      setContent('');
+    }
   }
+
   return (
     <div className="container">
       <form className="white" onSubmit={onSubmitHandler}>
@@ -43,4 +56,5 @@ const CreateProject = () => {
     </div>
   );
 };
-export default CreateProject;
+
+export default connect(null,{createProject})(CreateProject);
