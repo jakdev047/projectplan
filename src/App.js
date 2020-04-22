@@ -9,6 +9,8 @@ import Navbar from './components/layout/Navbar';
 import Dashboard from './components/dashboard/Dashboard';
 import Error from './components/Error/Error';
 import ProjectDetails from './components/projects/ProjectDetails';
+import SigneIn from './components/auth/SigneIn';
+import SigneUp from './components/auth/SignUp';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Switch>
           <Route exact path='/' component={Dashboard}/>
           <Route exact path='/projects/:id' component={ProjectDetails}/>
+          <Route exact path='/signin' component={SigneIn}/>
+          <Route exact path='/signup' component={SigneUp}/>
           <Route path='*' component={Error}/>
         </Switch>
       </div>
