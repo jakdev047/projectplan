@@ -11,6 +11,7 @@ import Error from './components/Error/Error';
 import ProjectDetails from './components/projects/ProjectDetails';
 import SigneIn from './components/auth/SigneIn';
 import SigneUp from './components/auth/SignUp';
+import CreateProject from './components/projects/CreateProject';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path='/projects/:id' component={ProjectDetails}/>
           <Route exact path='/signin' component={SigneIn}/>
           <Route exact path='/signup' component={SigneUp}/>
+          <Route exact path='/create' component={CreateProject}/>
           <Route path='*' component={Error}/>
         </Switch>
       </div>
