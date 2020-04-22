@@ -1,5 +1,13 @@
-$secondaryColor: #eb1b33;
+$secondaryColor: #ec407a;
 
 h2 {
   color: $secondaryColor;
+}
+
+// error-section
+.error-section {
+  h2{
+    font-size: 78px;
+    text-align: center;
+  }
 }
